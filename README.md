@@ -2,10 +2,8 @@
 
 This is a Java 2D drawing application that allows users to create and manipulate simple shapes, including lines, rectangles, and ovals. The application provides a user-friendly interface for drawing and customizing these shapes with various options.
 Features:
-
-    Shape Selection: Choose from three basic shapes: Line, Rectangle, and Oval.
-
-    Color Customization: Utilize the built-in color picker to select both the primary and secondary colors for creating gradients.
+* Shape Selection: Choose from three basic shapes: Line, Rectangle, and Oval.
+* Color Customization: Utilize the built-in color picker to select both the primary and secondary colors for creating gradients.
 
     Undo and Clear: Easily undo the last shape drawn or clear the canvas completely.
 
