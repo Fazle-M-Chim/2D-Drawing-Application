@@ -135,8 +135,7 @@ public DrawingApplicationFrame() {
                 ? new GradientPaint(0, 0, c1, 50, 50, c2, true) 
                 : new GradientPaint(0, 0, c1, 50, 50, c1, true);
 
-            switch(shapeComboBox.getSelectedItem().toString())
-            {
+            switch(shapeComboBox.getSelectedItem().toString()) {
                 case "Line":
                     return new MyLine(start, end, selectPaint, strk);
                 case "Oval":
@@ -149,8 +148,7 @@ public DrawingApplicationFrame() {
         }
 
         @Override
-        public void paintComponent(Graphics g)
-        {
+        public void paintComponent(Graphics g) {
             super.paintComponent(g);
             Graphics2D g2d = (Graphics2D) g;
 
@@ -166,43 +164,36 @@ public DrawingApplicationFrame() {
             tempShapes.clear();
         }
 
-        private class MouseHandler extends MouseAdapter implements MouseMotionListener
-        {
+        private class MouseHandler extends MouseAdapter implements MouseMotionListener {
             
             @Override
-            public void mousePressed(MouseEvent event)
-            {
+            public void mousePressed(MouseEvent event) {
                 startPoint = event.getPoint();
             }
             
             @Override
-            public void mouseReleased(MouseEvent event)
-            {
+            public void mouseReleased(MouseEvent event) {
                 MyShapes currShape = buildShape(startPoint, event.getPoint());
-                if (currShape != null)
-                {
+                if (currShape != null) {
                     allShapes.add(currShape);
                     drawPanel.repaint();
                 }
             }
 
             @Override
-            public void mouseDragged(MouseEvent event)
-            {
+            public void mouseDragged(MouseEvent event) {
                 statusLabel.setText("(" + event.getX() + "," + event.getY() + ")");
                 MyShapes currShape = buildShape(startPoint, event.getPoint());
-                if (currShape != null)
-                {
+                if (currShape != null) {
                     tempShapes.add(currShape);
                     drawPanel.repaint();
                 }
             }
 
             @Override
-            public void mouseMoved(MouseEvent event)
-            {
+            public void mouseMoved(MouseEvent event) {
                 statusLabel.setText("(" + event.getX() + "," + event.getY() + ")");
-            }
+            } 
         }
     }
 }
